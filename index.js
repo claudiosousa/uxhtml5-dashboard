@@ -8,9 +8,8 @@ module.exports = {
 		    console.log('dashboard-installed');
 		});
 		debugger;
-		var filesPath = path.resolve('files');
+		var filesPath = path.join(__dirname+'/files/');
 		console.log('files:' + filesPath);
-		console.log('dir path:' + __dirname);
 		fs.copy(filesPath, options.directory, function (a, b, c) {
 		    debugger;
 		    console.log('files copied');
