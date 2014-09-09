@@ -7,7 +7,9 @@ module.exports = {
 		    console.log('dashboard-installed');
 		});
 		debugger;
-		fs.copy('files', options.directory, function (a, b, c) {
+		var filesPath = path.resolve('files');
+		console.log('files:' + filesPath);
+		fs.copy(filesPath, options.directory, function (a, b, c) {
 		    debugger;
 		    console.log('files copied');
 		})
