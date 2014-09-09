@@ -1,8 +1,8 @@
 module.exports = {
     run: function (options) {
 		var generator = options.generator;
-        generator.composeWith("html5:dep", { options: { 'install': 'https://services.sungard.com/git/scm/uxl/ux-dashboard-workspace.git#master' } });
+		generator.composeWith("html5:dep", { options: { 'install': 'https://services.sungard.com/git/scm/uxl/ux-kendodataviz-dashboard.git#master' } }, function () {
+		    console.log('dashboard-installed');
+		});
     }
 };
-console.log('dashboard\\indes.js1')
-//throw "Test"
