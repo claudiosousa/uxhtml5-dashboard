@@ -11,5 +11,8 @@
     "url": "ssh://git@EMEAGVASV603:8060/ux/uxhtml5-dashboard.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^0.11.1"
+  }
 }
