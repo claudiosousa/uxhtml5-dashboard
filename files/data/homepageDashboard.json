@@ -1,0 +1,396 @@
+﻿{
+	"localStorageKey":"homepageDashboard",
+	"localStorageDefaultUrl":"data/homepageDashboard_default.json",
+	"widget_margins": [10,10],
+    "widget_base_dimensions": [280, 210],
+	"colors": [
+		"blue",
+		"light_blue",
+		"grey",
+		"pink",
+		"red",
+		"orange",
+		"yellow",
+		"dark_green",
+		"green",
+		"turq",
+		"dark_turq",
+		"purple",
+		"violet",
+		"dark_blue",
+		"dark_red",
+		"brown",
+		"black"
+	],
+	"widgets": [ {
+			"id": "assetAllocation",
+			"directive": "kendoVizWidget",
+			"title": "Asset Allocation",	
+            "description":"The 'Asset Allocation' chart",
+            "allowMultipleAdd":false,
+			"widgetParameters": {	
+                "kendoConfig":{
+	                "title": {
+		                "text": "Asset Allocation"
+	                },
+	                "legend": {
+		                "position": "top"
+	                },
+	                "seriesDefaults": {
+		                "labels": {
+			                "template": "#= category # - #= kendo.format('{0:P}', percentage)#",
+			                "position": "outsideEnd",
+			                "visible": true,
+			                "background": "transparent"
+		                }
+	                },
+	                "series": [
+		                {
+			                "type": "pie",
+			                "data": [
+				                {
+					                "category": "Consumer Staples Energy",
+					                "value": 35
+				                },
+				                {
+					                "category": "Financials",
+					                "value": 25
+				                },
+				                {
+					                "category": "Utilities",
+					                "value": 20
+				                },
+				                {
+					                "category": "Materials",
+					                "value": 10
+				                },
+				                {
+					                "category": "Industrials",
+					                "value": 10
+				                }
+			                ]
+		                }
+	                ],
+	                "transitions": false,
+	                "tooltip": {
+		                "visible": true,
+		                "template": "#= category # - #= kendo.format('{0:P}', percentage) #"
+	                }
+                },
+                "onChartRefresh":[
+                    "kendoChart.options.series[0].labels.visible = height > 1 && width > 1"                    
+                ]               
+			},		
+			"capabilities":{
+				"resize":true,
+                "fullscreen":true,
+                "configure":false
+			},
+			"style": {
+				"color": "purple"
+			},
+			"size": {
+				"height": 2,
+				"width": 2	
+			}
+		},	 {
+			"id": "contributorsToRisk",
+			"directive": "kendoVizWidget",
+			"title": "Contributors To Risk",	
+            "description":"The 'Contributors To Risk' chart",
+            "allowMultipleAdd":false,
+			"widgetParameters": {	
+                "kendoConfig":{
+	                "title": {
+		                "text": "Top 10 Contributors to \nPortfolio Position\nBased Volatility"
+	                },
+	                "legend": {
+		                "visible": false
+	                },
+	                "seriesDefaults": {
+		                "type": "bar"
+	                },
+	                "series": [
+		                {
+			                "name": "Portfolio volatility",
+			                "data": [
+				                0.823,
+				                0.810,
+				                0.790,
+				                0.763,
+				                0.725,
+				                0.702
+			                ]
+		                }
+	                ],
+	                "valueAxis": {
+		                "line": {
+			                "visible": false
+		                },
+		                "minorGridLines": {
+			                "visible": true
+		                }
+	                },
+	                "categoryAxis": {
+		                "categories": [
+			                "KAZAKHMYS",
+			                "EVRAZ",
+			                "EURASIAN NATRES.CORP.",
+			                "GKN",
+			                "WEIR GROUP"
+		                ],
+		                "majorGridLines": {
+			                "visible": false
+		                }
+	                },
+	                "tooltip": {
+		                "visible": true,
+		                "template": "#= series.name #: #= value #"
+	                }
+                }
+			},		
+			"capabilities":{
+				"resize":true,
+                "fullscreen":true,
+                "configure":false
+			},
+			"style": {
+				"color": "orange"
+			},
+			"size": {
+				"height": 2,
+				"width": 2				
+			}
+		}, {
+			"id": "scenarioAnalysis",
+			"directive": "kendoVizWidget",
+			"title": "Scenario Analysis",	
+            "description":"The 'Scenario Analysis' chart",
+            "allowMultipleAdd":false,
+			"widgetParameters": {	
+                "kendoConfig":{
+	                "title": {
+		                "text": "Portfolio Scenario Value Change"
+	                },
+	                "legend": {
+		                "visible": false
+	                },
+	                "seriesDefaults": {
+		                "type": "column"
+	                },
+	                "series": [
+                        
+		                {
+                            "categoryField":"category",
+			                "data": [
+                               {"color":"#00355F","value":-10,"category":"Mortgage Crisis 2007"},
+                               {"color":"#0067AC","value":-30,"category":"9-11 2001"},
+                               {"color":"#569BBE","value":-50,"category":"WorldCom 2002"},
+                               {"color":"#727A35","value":-5,"category":"Russian Default1998"},
+                               {"color":"#914D03","value":-55,"category":"Asian Crisis 1997"}
+			                ]
+		                }
+	                ],
+	                "valueAxis": {
+		                "line": {
+			                "visible": false
+		                },
+		                "minorGridLines": {
+			                "visible": true
+		                }
+	                },
+	                "categoryAxis": {		               
+                        "labels": {
+                            "rotation": -45
+                        },
+		                "majorGridLines": {
+			                "visible": false
+		                }
+	                },
+	                "tooltip": {
+		                "visible": true,
+		                "template": "#= category #: #= value #"
+	                }
+                }
+			},		
+			"capabilities":{
+				"resize":true,
+                "fullscreen":true,
+                "configure":false
+			},
+			"style": {
+				"color": "orange"
+			},
+			"size": {
+				"height": 2,
+				"width": 2,
+				"min":{
+					"width": 1,
+					"height": 1
+				},
+				"max":{
+					"width": 3,
+					"height": 3
+				}
+			}
+		},	 {
+			"id": "trendAnalysis",
+			"directive": "kendoVizWidget",
+			"title": "Trend Analysis",	
+            "description":"The 'Trend Analysis' chart",
+            "allowMultipleAdd":false,
+			"widgetParameters": {	
+                "kendoConfig":   {
+	                "legend": {
+		                "position": "bottom"
+	                },
+	                "seriesDefaults": {
+		                "type": "area",
+		                "area": {
+			                "line": {
+				                "style": "smooth"
+			                }
+		                }
+	                },
+	                "valueAxis": {
+		                "labels": {
+			                "format": "{0}%"
+		                },
+		                "line": {
+			                "visible": false
+		                },
+		                "axisCrossingValue": -10
+	                },
+	                "categoryAxis": {
+		                "majorGridLines": {
+			                "visible": false
+		                }
+	                },
+	                "tooltip": {
+		                "visible": true,
+		                "format": "{0}%",
+		                "template": "#= series.name #: #= value #"
+	                }
+                },
+                "popup":{
+                    "title":"Configuration popup",
+                    "body":"trendAnalysis.html"
+                },
+                "remoteConfig":{
+                     "url":"data/trendAnalysis/{resultType}.json?yearsCount={years}",
+                     "parameters":{
+                         "resultType":"portfolioVolatility",
+                         "years":"10"
+                     }
+                }
+			},	
+            "widgetUserPreferences":{
+				"kendoConfig":{  
+                    "seriesDefaults": {
+		                "type": "area"
+                    }
+                },
+                "remoteConfig":{
+                    "parameters":{
+                        "resultType":"portfolioVolatility",
+                        "years":"10"
+                    }
+                }
+			},	
+			"capabilities":{
+				"resize":true,
+                "fullscreen":true,
+                "configure":true
+			},
+			"style": {
+				"color": "orange"
+			},
+			"size": {
+				"height": 2,
+				"width": 2
+			}
+		},	{
+			"id": "widgetExample1",
+			"directive": "dashboardWidgetExample1",
+			"title": "Resize example",	
+            "description":"This widget example is resizable demonstrates how a widget can show a diferent view depending on it's size. After you add it to your dashboard, try to resize it and go to full-screen view the diferent layouts",
+            "allowMultipleAdd":false,
+			"widgetParameters": {
+				"myDataUrl":"vendor/dashboard-workspace/src/widgetExamples/dataExample1.json"
+			},		
+			"capabilities":{
+				"resize":true,
+				"fullscreen":true
+			},
+			"style": {
+				"color": "light_blue"
+			},
+			"size": {
+				"height": 2,
+				"width": 2,
+				"min":{
+					"width": 1,
+					"height": 1
+				},
+				"max":{
+					"width": 5,
+					"height": 4
+				}
+			}
+		},	
+			{
+			"id": "widgetExample2",
+			"directive": "dashboardWidgetExample2",
+			"title": "Fullscreen example",		
+            "description":"This widget example is interactive and can go full screen. After you add it to your dashboard, try to left-click on it to zoom in, and right click to zoom out.",
+			"allowMultipleAdd":false,
+            "capabilities":{
+				"resize":true,
+				"fullscreen":true
+			},
+			"style": {
+				"color": "black"
+			},
+			"size": {
+				"height": 2,
+				"width": 2,
+				"min":{
+					"width": 1,
+					"height": 1
+				},
+				"max":{
+					"width": 3,
+					"height": 3
+				}
+			}
+		},			
+		{
+			"id": "widgetExample3",
+			"directive": "dashboardWidgetExample3",
+			"title": "Config example",
+            "description":"This widget shows a title witch is configurable after it has been added to your dashboard. The user prefered title is saved and overides the default one.",
+			"allowMultipleAdd":true,
+            "widgetParameters": {
+				"someUrlToGetTheDataFrom":"vendor/ux-dashboard-workspace/src/widgetExamples/gridExample.png"
+			},
+			"widgetUserPreferences":{
+				"title":"Net Market Value"
+			},
+			"capabilities":{
+				"configure":true,
+				"resize":true
+			},
+			"style": {
+				"color": "dark_green"
+			},
+			"size": {
+				"height": 2,
+				"width": 2,	
+				"max":{
+					"width": 3,
+					"height": 3
+				}		
+			}
+		}
+	]
+}

@@ -1,0 +1,15 @@
+﻿<div>
+    <span style="vertical-align: top;width:70px;display: inline-block;">Result type:</span>
+    <select ng-init='resultTypes =[{id:"portfolioVolatility", label:"Portfolio Volatility"},{id:"trackingAtRisk", label:"Tracking at Risk"}]'
+            ng-model="widgetData.widgetUserPreferences.remoteConfig.parameters.resultType"
+            ng-options="resultType.id as resultType.label for resultType in resultTypes"
+            required="true" />
+</div>
+<div>
+    <span style="vertical-align: top;width:70px;display: inline-block;">Chart type:</span>
+    <div style="display:inline-block">
+        <input type="radio" ng-model="widgetData.widgetUserPreferences.kendoConfig.seriesDefaults.type" value="area">Area
+        <span style="display:inline-block;width:20px" />
+        <input type="radio" ng-model="widgetData.widgetUserPreferences.kendoConfig.seriesDefaults.type" value="line">Line
+    </div>
+</div>

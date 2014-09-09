@@ -1,0 +1,10 @@
+{
+    "main": [{
+        "id": "Dashboard",
+        "label": "Dashboard",
+        "enabled": true,
+        "display": true,
+        "closeable": false,
+        "partial": "views\\Dashboard.html"
+    }]
+}

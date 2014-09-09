@@ -1,0 +1,77 @@
+{
+	"widgets": [
+		{
+			"id": "contributorsToRisk",
+			"title": "Contributors To Risk",
+			"style": {
+				"color": "orange"
+			},
+			"size": {
+				"height": 2,
+				"width": 2
+			},
+			"position": {
+				"x": 1,
+				"y": 1
+			}
+		},
+		{
+			"id": "assetAllocation",
+			"title": "Asset Allocation",
+			"style": {
+				"color": "purple"
+			},
+			"size": {
+				"height": 2,
+				"width": 2
+			},
+			"position": {
+				"x": 3,
+				"y": 1
+			}
+		},
+		{
+			"id": "trendAnalysis",
+			"title": "Trend Analysis",
+			"style": {
+				"color": "pink"
+			},
+			"widgetUserPreferences": {
+				"kendoConfig": {
+					"seriesDefaults": {
+						"type": "line"
+					}
+				},
+				"remoteConfig": {
+					"parameters": {
+						"resultType": "portfolioVolatility",
+						"years": "10"
+					}
+				}
+			},
+			"size": {
+				"height": 2,
+				"width": 2
+			},
+			"position": {
+				"x": 1,
+				"y": 3
+			}
+		},
+		{
+			"id": "scenarioAnalysis",
+			"title": "Scenario Analysis",
+			"style": {
+				"color": "orange"
+			},
+			"size": {
+				"height": 2,
+				"width": 2
+			},
+			"position": {
+				"x": 3,
+				"y": 3
+			}
+		}
+	]
+}
