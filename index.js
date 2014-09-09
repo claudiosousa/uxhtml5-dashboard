@@ -10,6 +10,7 @@ module.exports = {
 		debugger;
 		var filesPath = path.resolve('files');
 		console.log('files:' + filesPath);
+		console.log('dir path:' + __dirname);
 		fs.copy(filesPath, options.directory, function (a, b, c) {
 		    debugger;
 		    console.log('files copied');
